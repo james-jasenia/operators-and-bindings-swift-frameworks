@@ -8,14 +8,14 @@
 import UIKit
 import Combine
 
-class CombineViewController: UIViewController {
+class CombineViewController: CommonViewController {
 
     var cancellable = Set<AnyCancellable>()
     let publisher = PassthroughSubject<String, Never>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        addView(styledButton)
         setupBindings()
         publisher.send("Combine")
     }
@@ -29,10 +29,4 @@ class CombineViewController: UIViewController {
     }
 }
 
-extension Publisher where Output == String {
-    func printToConsole() -> AnyPublisher<Output, Failure> {
-        handleEvents(receiveOutput: { value in
-            Swift.print(value + " - \(#function)")
-        }).eraseToAnyPublisher()
-    }
-}
+

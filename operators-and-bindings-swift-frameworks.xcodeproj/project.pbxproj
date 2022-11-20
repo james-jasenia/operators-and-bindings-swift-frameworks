@@ -20,6 +20,11 @@
 		C41718162929F41F0069438E /* RxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41718152929F41F0069438E /* RxSwiftViewController.swift */; };
 		C41718182929F4450069438E /* ReactiveSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41718172929F4450069438E /* ReactiveSwiftViewController.swift */; };
 		C417181B2929F7C70069438E /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C417181A2929F7C70069438E /* UIViewController+Ext.swift */; };
+		C4C9D8A6292A100B0019C3C9 /* Combine+Operators+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C9D8A5292A100B0019C3C9 /* Combine+Operators+Ext.swift */; };
+		C4C9D8A8292A10420019C3C9 /* Rx+Operators+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C9D8A7292A10420019C3C9 /* Rx+Operators+Ext.swift */; };
+		C4C9D8AA292A10610019C3C9 /* Reactive+Operators+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C9D8A9292A10610019C3C9 /* Reactive+Operators+Ext.swift */; };
+		C4C9D8AC292A10CF0019C3C9 /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C9D8AB292A10CF0019C3C9 /* StyledButton.swift */; };
+		C4C9D8AF292A12B40019C3C9 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C9D8AE292A12B40019C3C9 /* CommonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,11 @@
 		C41718152929F41F0069438E /* RxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftViewController.swift; sourceTree = "<group>"; };
 		C41718172929F4450069438E /* ReactiveSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveSwiftViewController.swift; sourceTree = "<group>"; };
 		C417181A2929F7C70069438E /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		C4C9D8A5292A100B0019C3C9 /* Combine+Operators+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combine+Operators+Ext.swift"; sourceTree = "<group>"; };
+		C4C9D8A7292A10420019C3C9 /* Rx+Operators+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Operators+Ext.swift"; sourceTree = "<group>"; };
+		C4C9D8A9292A10610019C3C9 /* Reactive+Operators+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Operators+Ext.swift"; sourceTree = "<group>"; };
+		C4C9D8AB292A10CF0019C3C9 /* StyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
+		C4C9D8AE292A12B40019C3C9 /* CommonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +80,7 @@
 		C41717EF2929EE8A0069438E /* operators-and-bindings-swift-frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C4C9D8AD292A10E40019C3C9 /* Common Views */,
 				C41718192929F7BE0069438E /* Shared */,
 				C417180E2929F2F70069438E /* App Lifecycle */,
 				C41718122929F35C0069438E /* Combine */,
@@ -104,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				C41717F42929EE8A0069438E /* CombineViewController.swift */,
+				C4C9D8A5292A100B0019C3C9 /* Combine+Operators+Ext.swift */,
 			);
 			path = Combine;
 			sourceTree = "<group>";
@@ -112,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				C41718152929F41F0069438E /* RxSwiftViewController.swift */,
+				C4C9D8A7292A10420019C3C9 /* Rx+Operators+Ext.swift */,
 			);
 			path = RxSwift;
 			sourceTree = "<group>";
@@ -120,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				C41718172929F4450069438E /* ReactiveSwiftViewController.swift */,
+				C4C9D8A9292A10610019C3C9 /* Reactive+Operators+Ext.swift */,
 			);
 			path = ReactiveSwift;
 			sourceTree = "<group>";
@@ -128,8 +142,17 @@
 			isa = PBXGroup;
 			children = (
 				C417181A2929F7C70069438E /* UIViewController+Ext.swift */,
+				C4C9D8AE292A12B40019C3C9 /* CommonViewController.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		C4C9D8AD292A10E40019C3C9 /* Common Views */ = {
+			isa = PBXGroup;
+			children = (
+				C4C9D8AB292A10CF0019C3C9 /* StyledButton.swift */,
+			);
+			path = "Common Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,11 +235,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4C9D8AA292A10610019C3C9 /* Reactive+Operators+Ext.swift in Sources */,
+				C4C9D8A8292A10420019C3C9 /* Rx+Operators+Ext.swift in Sources */,
 				C41717F52929EE8A0069438E /* CombineViewController.swift in Sources */,
+				C4C9D8AC292A10CF0019C3C9 /* StyledButton.swift in Sources */,
 				C41718112929F31C0069438E /* AppComposer.swift in Sources */,
 				C417181B2929F7C70069438E /* UIViewController+Ext.swift in Sources */,
 				C41718162929F41F0069438E /* RxSwiftViewController.swift in Sources */,
 				C41717F12929EE8A0069438E /* AppDelegate.swift in Sources */,
+				C4C9D8A6292A100B0019C3C9 /* Combine+Operators+Ext.swift in Sources */,
+				C4C9D8AF292A12B40019C3C9 /* CommonViewController.swift in Sources */,
 				C41717F32929EE8A0069438E /* SceneDelegate.swift in Sources */,
 				C41718182929F4450069438E /* ReactiveSwiftViewController.swift in Sources */,
 			);
