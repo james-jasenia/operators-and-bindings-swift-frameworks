@@ -7,6 +7,7 @@
 
 import UIKit
 import ReactiveSwift
+import ReactiveCocoa
 
 class ReactiveSwiftViewController: CommonViewController {
     
@@ -25,5 +26,7 @@ class ReactiveSwiftViewController: CommonViewController {
             .observeValues {
                 print($0 + " - from observeValues")
             }
+        
+        styledButton.reactive.title <~ publisher        
     }
 }

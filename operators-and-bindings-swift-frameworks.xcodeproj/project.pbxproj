@@ -12,10 +12,6 @@
 		C41717F52929EE8A0069438E /* CombineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41717F42929EE8A0069438E /* CombineViewController.swift */; };
 		C41717FA2929EE8C0069438E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C41717F92929EE8C0069438E /* Assets.xcassets */; };
 		C41717FD2929EE8C0069438E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C41717FB2929EE8C0069438E /* LaunchScreen.storyboard */; };
-		C41718062929F1C50069438E /* ReactiveSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C41718052929F1C50069438E /* ReactiveSwift */; };
-		C41718092929F2990069438E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C41718082929F2990069438E /* RxCocoa */; };
-		C417180B2929F2990069438E /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = C417180A2929F2990069438E /* RxRelay */; };
-		C417180D2929F2990069438E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C417180C2929F2990069438E /* RxSwift */; };
 		C41718112929F31C0069438E /* AppComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41718102929F31C0069438E /* AppComposer.swift */; };
 		C41718162929F41F0069438E /* RxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41718152929F41F0069438E /* RxSwiftViewController.swift */; };
 		C41718182929F4450069438E /* ReactiveSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41718172929F4450069438E /* ReactiveSwiftViewController.swift */; };
@@ -25,6 +21,11 @@
 		C4C9D8AA292A10610019C3C9 /* Reactive+Operators+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C9D8A9292A10610019C3C9 /* Reactive+Operators+Ext.swift */; };
 		C4C9D8AC292A10CF0019C3C9 /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C9D8AB292A10CF0019C3C9 /* StyledButton.swift */; };
 		C4C9D8AF292A12B40019C3C9 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C9D8AE292A12B40019C3C9 /* CommonViewController.swift */; };
+		C4C9D8B3292A47580019C3C9 /* ReactiveCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C4C9D8B2292A47580019C3C9 /* ReactiveCocoa */; };
+		C4C9D8B6292A47820019C3C9 /* ReactiveSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C4C9D8B5292A47820019C3C9 /* ReactiveSwift */; };
+		C4C9D8B9292A479B0019C3C9 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C4C9D8B8292A479B0019C3C9 /* RxCocoa */; };
+		C4C9D8BB292A479B0019C3C9 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = C4C9D8BA292A479B0019C3C9 /* RxRelay */; };
+		C4C9D8BD292A479B0019C3C9 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C4C9D8BC292A479B0019C3C9 /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,10 +52,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C417180B2929F2990069438E /* RxRelay in Frameworks */,
-				C41718092929F2990069438E /* RxCocoa in Frameworks */,
-				C417180D2929F2990069438E /* RxSwift in Frameworks */,
-				C41718062929F1C50069438E /* ReactiveSwift in Frameworks */,
+				C4C9D8B9292A479B0019C3C9 /* RxCocoa in Frameworks */,
+				C4C9D8B3292A47580019C3C9 /* ReactiveCocoa in Frameworks */,
+				C4C9D8BD292A479B0019C3C9 /* RxSwift in Frameworks */,
+				C4C9D8BB292A479B0019C3C9 /* RxRelay in Frameworks */,
+				C4C9D8B6292A47820019C3C9 /* ReactiveSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,10 +174,11 @@
 			);
 			name = "operators-and-bindings-swift-frameworks";
 			packageProductDependencies = (
-				C41718052929F1C50069438E /* ReactiveSwift */,
-				C41718082929F2990069438E /* RxCocoa */,
-				C417180A2929F2990069438E /* RxRelay */,
-				C417180C2929F2990069438E /* RxSwift */,
+				C4C9D8B2292A47580019C3C9 /* ReactiveCocoa */,
+				C4C9D8B5292A47820019C3C9 /* ReactiveSwift */,
+				C4C9D8B8292A479B0019C3C9 /* RxCocoa */,
+				C4C9D8BA292A479B0019C3C9 /* RxRelay */,
+				C4C9D8BC292A479B0019C3C9 /* RxSwift */,
 			);
 			productName = "operators-and-bindings-swift-frameworks";
 			productReference = C41717ED2929EE8A0069438E /* operators-and-bindings-swift-frameworks.app */;
@@ -206,8 +209,9 @@
 			);
 			mainGroup = C41717E42929EE8A0069438E;
 			packageReferences = (
-				C41718042929F1C50069438E /* XCRemoteSwiftPackageReference "ReactiveSwift" */,
-				C41718072929F2990069438E /* XCRemoteSwiftPackageReference "RxSwift" */,
+				C4C9D8B1292A47580019C3C9 /* XCRemoteSwiftPackageReference "ReactiveCocoa" */,
+				C4C9D8B4292A47820019C3C9 /* XCRemoteSwiftPackageReference "ReactiveSwift" */,
+				C4C9D8B7292A479B0019C3C9 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = C41717EE2929EE8A0069438E /* Products */;
 			projectDirPath = "";
@@ -456,15 +460,23 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C41718042929F1C50069438E /* XCRemoteSwiftPackageReference "ReactiveSwift" */ = {
+		C4C9D8B1292A47580019C3C9 /* XCRemoteSwiftPackageReference "ReactiveCocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveCocoa/ReactiveCocoa/";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		C4C9D8B4292A47820019C3C9 /* XCRemoteSwiftPackageReference "ReactiveSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveCocoa/ReactiveSwift";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
+				branch = master;
+				kind = branch;
 			};
 		};
-		C41718072929F2990069438E /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+		C4C9D8B7292A479B0019C3C9 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
 			requirement = {
@@ -475,24 +487,29 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C41718052929F1C50069438E /* ReactiveSwift */ = {
+		C4C9D8B2292A47580019C3C9 /* ReactiveCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C41718042929F1C50069438E /* XCRemoteSwiftPackageReference "ReactiveSwift" */;
+			package = C4C9D8B1292A47580019C3C9 /* XCRemoteSwiftPackageReference "ReactiveCocoa" */;
+			productName = ReactiveCocoa;
+		};
+		C4C9D8B5292A47820019C3C9 /* ReactiveSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C4C9D8B4292A47820019C3C9 /* XCRemoteSwiftPackageReference "ReactiveSwift" */;
 			productName = ReactiveSwift;
 		};
-		C41718082929F2990069438E /* RxCocoa */ = {
+		C4C9D8B8292A479B0019C3C9 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C41718072929F2990069438E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = C4C9D8B7292A479B0019C3C9 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
 		};
-		C417180A2929F2990069438E /* RxRelay */ = {
+		C4C9D8BA292A479B0019C3C9 /* RxRelay */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C41718072929F2990069438E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = C4C9D8B7292A479B0019C3C9 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxRelay;
 		};
-		C417180C2929F2990069438E /* RxSwift */ = {
+		C4C9D8BC292A479B0019C3C9 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C41718072929F2990069438E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = C4C9D8B7292A479B0019C3C9 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

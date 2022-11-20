@@ -29,6 +29,16 @@ class StyledButton: UIButton {
             backgroundColor = isEnabled ? enabledBackgroundColour : disabledBackgroundColour
         }
     }
+    
+    var normalTitle: String {
+        get {
+            title(for: .normal) ?? ""
+        }
+        
+        set {
+            setTitle(newValue, for: .normal)
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)

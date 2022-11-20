@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxRelay
+import RxCocoa
 
 class RxSwiftViewController: CommonViewController {
     
@@ -26,6 +27,10 @@ class RxSwiftViewController: CommonViewController {
             .subscribe(onNext: {
                 print($0 + " - from subscribe")
             }).disposed(by: disposeBag)
+        
+        subject
+            .bind(to: styledButton.rx.title(for: .normal))
+            .disposed(by: disposeBag)
     }
 }
 

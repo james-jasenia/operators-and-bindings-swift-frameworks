@@ -26,6 +26,10 @@ class CombineViewController: CommonViewController {
             .sink(receiveValue: {
                 print("\($0) - from sink")
             }).store(in: &cancellable)
+        
+        publisher
+            .assign(to: \.normalTitle, on: styledButton)
+            .store(in: &cancellable)
     }
 }
 
