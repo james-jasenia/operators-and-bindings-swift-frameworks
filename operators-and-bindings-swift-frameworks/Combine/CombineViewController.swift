@@ -17,7 +17,7 @@ class CombineViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupBindings()
-        publisher.send("Test")
+        publisher.send("Combine")
     }
     
     private func setupBindings() {

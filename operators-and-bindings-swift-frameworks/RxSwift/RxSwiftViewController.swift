@@ -7,21 +7,36 @@
 
 import UIKit
 import RxSwift
+import RxRelay
 
 class RxSwiftViewController: UIViewController {
+    
+    let disposeBag = DisposeBag()
+    let subject = PublishRelay<String>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupBindings()
+        subject.accept("RxSwift")
     }
     
     private func setupBindings() {
-        
+        subject
+            .printToConsole()
+            .subscribe(onNext: {
+                print($0 + " - from subscribe")
+            }).disposed(by: disposeBag)
     }
 }
 
-extension UIViewController {
-    func setupView() {
-        view.backgroundColor = .white
+extension ObservableType where Element == String {
+    func printToConsole() -> Observable<Element> {
+        self.do(onNext: {
+            print($0 + " - \(#function)")
+        })
     }
 }
+
+
+
