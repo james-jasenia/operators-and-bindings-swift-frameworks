@@ -12,27 +12,22 @@ import ReactiveCocoa
 class ReactiveSwiftViewController: CommonViewController {
     
     let disposables = CompositeDisposable()
-    let buttonTitlePublisher = MutableProperty<String>("")
-    let isLoadingPublisher = MutableProperty<Bool>(true)
+    let viewModel = ReactiveSwiftViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBindings()
-        buttonTitlePublisher.swap("Reactive Swift")
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: { [weak self] in
-            self?.isLoadingPublisher.swap(false)
-        })
+        viewModel.invokeMockUseCase()
     }
     
     private func setupBindings() {
-        disposables += buttonTitlePublisher.signal
+        disposables += viewModel.buttonTitleProducer
             .printToConsole()
-            .observeValues {
+            .startWithValues {
                 print($0 + " - from observeValues")
             }
         
-        styledButton.reactive.title <~ buttonTitlePublisher
-        styledButton.reactive.isLoading <~ isLoadingPublisher
+        styledButton.reactive.title <~ viewModel.buttonTitleProducer
+        styledButton.reactive.isLoading <~ viewModel.isLoadingProducer
     }
 }

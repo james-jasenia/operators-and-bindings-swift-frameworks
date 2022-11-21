@@ -8,8 +8,8 @@
 import Foundation
 import ReactiveSwift
 
-extension Signal where Value == String, Error == Never {
-    func printToConsole() -> Signal<String, Never> {
+extension SignalProducer where Value == String, Error == Never {
+    func printToConsole() -> SignalProducer<String, Never> {
         on(value: {
             print($0 + " - \(#function)")
         })
