@@ -27,7 +27,7 @@ class ReactiveSwiftViewController: CommonViewController {
                 print($0 + " - from observeValues")
             }
         
-        styledButton.reactive.title <~ viewModel.buttonTitleProducer
-        styledButton.reactive.isLoading <~ viewModel.isLoadingProducer
+        primaryActionButton.reactive.title <~ viewModel.buttonTitleProducer
+        primaryActionButton.reactive.isLoading <~ viewModel.isLoadingProducer
     }
 }

@@ -11,28 +11,34 @@ import Combine
 class CombineViewController: CommonViewController {
 
     let viewModel = CombineViewModel()
-    var cancellable = Set<AnyCancellable>()
+    var cancellables = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBindings()
-        viewModel.invokeMockUseCase()
+        viewModel.invokeMockLoadingUseCase()
+        viewModel.invokeMockNetworkUseCase()
     }
     
     private func setupBindings() {
-        viewModel.buttonTitleSubject
+        viewModel.buttonTitlePublisher
             .printToConsole()
             .sink(receiveValue: {
                 print("\($0) - from sink")
-            }).store(in: &cancellable)
+            }).store(in: &cancellables)
         
-        viewModel.buttonTitleSubject
-            .assign(to: \.normalTitle, on: styledButton)
-            .store(in: &cancellable)
+        viewModel.buttonTitlePublisher
+            .assign(to: \.normalTitle, on: primaryActionButton)
+            .store(in: &cancellables)
         
-        viewModel.isLoadingSubject
-            .assign(to: \.isLoading, on: styledButton)
-            .store(in: &cancellable)
+        viewModel.isLoadingPublisher
+            .assign(to: \.isLoading, on: primaryActionButton)
+            .store(in: &cancellables)
+        
+        viewModel.productPublisher
+            .map { $0 }
+            .assign(to: \.text, on: headerLabel)
+            .store(in: &cancellables)
     }
 }
 

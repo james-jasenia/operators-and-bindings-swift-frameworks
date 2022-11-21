@@ -29,11 +29,11 @@ class RxSwiftViewController: CommonViewController {
             }).disposed(by: disposeBag)
         
         viewModel.buttonTitleRelay
-            .bind(to: styledButton.rx.title(for: .normal))
+            .bind(to: primaryActionButton.rx.title(for: .normal))
             .disposed(by: disposeBag)
         
         viewModel.isLoadingRelay
-            .bind(to: styledButton.rx.isLoading)
+            .bind(to: primaryActionButton.rx.isLoading)
             .disposed(by: disposeBag)
     }
 }
