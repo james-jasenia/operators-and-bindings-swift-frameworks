@@ -63,21 +63,11 @@ class StyledButton: UIButton {
     }
 
     func styleView() {
-        titleLabel?.lineBreakMode = .byTruncatingTail
-        titleLabel?.textAlignment = .center
-        titleLabel?.adjustsFontForContentSizeCategory = true
-
         backgroundColor = enabledBackgroundColour
+        tintColor = tintColour
 
         setTitleColor(enabledFontColour, for: .normal)
         setTitleColor(disabledFontColour, for: .disabled)
-
-        tintColor = tintColour
-
-        layer.cornerRadius = {
-            let shorterSide: CGFloat = layer.frame.height < layer.frame.width ? layer.frame.height : layer.frame.width
-            return shorterSide / 2
-        }()
 
         positionActivityIndicatorInButton()
     }

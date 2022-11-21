@@ -158,8 +158,8 @@
 		C41718192929F7BE0069438E /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				C417181A2929F7C70069438E /* UIViewController+Ext.swift */,
 				C4C9D8AE292A12B40019C3C9 /* CommonViewController.swift */,
+				C417181A2929F7C70069438E /* UIViewController+Ext.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
