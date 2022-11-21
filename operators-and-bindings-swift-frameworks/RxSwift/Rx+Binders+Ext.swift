@@ -9,7 +9,6 @@ import Foundation
 import RxSwift
 
 extension Reactive where Base: StyledButton {
-    
     var isLoading: Binder<Bool> {
         return Binder(self.base) { button, isLoading in
             button.isLoadingIndicatorEnabled(isLoading)

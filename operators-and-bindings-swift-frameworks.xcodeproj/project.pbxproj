@@ -16,6 +16,7 @@
 		C41718162929F41F0069438E /* RxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41718152929F41F0069438E /* RxSwiftViewController.swift */; };
 		C41718182929F4450069438E /* ReactiveSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41718172929F4450069438E /* ReactiveSwiftViewController.swift */; };
 		C417181B2929F7C70069438E /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C417181A2929F7C70069438E /* UIViewController+Ext.swift */; };
+		C4A48E69292B74CF006CA57F /* Reactive+Binders+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A48E68292B74CF006CA57F /* Reactive+Binders+Ext.swift */; };
 		C4C9D8A6292A100B0019C3C9 /* Combine+Operators+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C9D8A5292A100B0019C3C9 /* Combine+Operators+Ext.swift */; };
 		C4C9D8A8292A10420019C3C9 /* Rx+Operators+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C9D8A7292A10420019C3C9 /* Rx+Operators+Ext.swift */; };
 		C4C9D8AA292A10610019C3C9 /* Reactive+Operators+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C9D8A9292A10610019C3C9 /* Reactive+Operators+Ext.swift */; };
@@ -26,7 +27,6 @@
 		C4C9D8B9292A479B0019C3C9 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C4C9D8B8292A479B0019C3C9 /* RxCocoa */; };
 		C4C9D8BB292A479B0019C3C9 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = C4C9D8BA292A479B0019C3C9 /* RxRelay */; };
 		C4C9D8BD292A479B0019C3C9 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C4C9D8BC292A479B0019C3C9 /* RxSwift */; };
-		C4C9D8BF292A48850019C3C9 /* Combine+Binders+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C9D8BE292A48850019C3C9 /* Combine+Binders+Ext.swift */; };
 		C4C9D8C1292A48B10019C3C9 /* Rx+Binders+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C9D8C0292A48B10019C3C9 /* Rx+Binders+Ext.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,12 +42,12 @@
 		C41718152929F41F0069438E /* RxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftViewController.swift; sourceTree = "<group>"; };
 		C41718172929F4450069438E /* ReactiveSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveSwiftViewController.swift; sourceTree = "<group>"; };
 		C417181A2929F7C70069438E /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		C4A48E68292B74CF006CA57F /* Reactive+Binders+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Binders+Ext.swift"; sourceTree = "<group>"; };
 		C4C9D8A5292A100B0019C3C9 /* Combine+Operators+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combine+Operators+Ext.swift"; sourceTree = "<group>"; };
 		C4C9D8A7292A10420019C3C9 /* Rx+Operators+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Operators+Ext.swift"; sourceTree = "<group>"; };
 		C4C9D8A9292A10610019C3C9 /* Reactive+Operators+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Operators+Ext.swift"; sourceTree = "<group>"; };
 		C4C9D8AB292A10CF0019C3C9 /* StyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
 		C4C9D8AE292A12B40019C3C9 /* CommonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
-		C4C9D8BE292A48850019C3C9 /* Combine+Binders+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combine+Binders+Ext.swift"; sourceTree = "<group>"; };
 		C4C9D8C0292A48B10019C3C9 /* Rx+Binders+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Binders+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,7 +122,6 @@
 			children = (
 				C41717F42929EE8A0069438E /* CombineViewController.swift */,
 				C4C9D8A5292A100B0019C3C9 /* Combine+Operators+Ext.swift */,
-				C4C9D8BE292A48850019C3C9 /* Combine+Binders+Ext.swift */,
 			);
 			path = Combine;
 			sourceTree = "<group>";
@@ -142,6 +141,7 @@
 			children = (
 				C41718172929F4450069438E /* ReactiveSwiftViewController.swift */,
 				C4C9D8A9292A10610019C3C9 /* Reactive+Operators+Ext.swift */,
+				C4A48E68292B74CF006CA57F /* Reactive+Binders+Ext.swift */,
 			);
 			path = ReactiveSwift;
 			sourceTree = "<group>";
@@ -246,12 +246,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4C9D8AA292A10610019C3C9 /* Reactive+Operators+Ext.swift in Sources */,
-				C4C9D8BF292A48850019C3C9 /* Combine+Binders+Ext.swift in Sources */,
 				C4C9D8A8292A10420019C3C9 /* Rx+Operators+Ext.swift in Sources */,
 				C41717F52929EE8A0069438E /* CombineViewController.swift in Sources */,
 				C4C9D8AC292A10CF0019C3C9 /* StyledButton.swift in Sources */,
 				C4C9D8C1292A48B10019C3C9 /* Rx+Binders+Ext.swift in Sources */,
 				C41718112929F31C0069438E /* AppComposer.swift in Sources */,
+				C4A48E69292B74CF006CA57F /* Reactive+Binders+Ext.swift in Sources */,
 				C417181B2929F7C70069438E /* UIViewController+Ext.swift in Sources */,
 				C41718162929F41F0069438E /* RxSwiftViewController.swift in Sources */,
 				C41717F12929EE8A0069438E /* AppDelegate.swift in Sources */,
