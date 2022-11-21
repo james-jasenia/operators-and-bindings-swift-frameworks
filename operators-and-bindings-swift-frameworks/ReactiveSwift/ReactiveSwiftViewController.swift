@@ -17,7 +17,8 @@ class ReactiveSwiftViewController: CommonViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBindings()
-        viewModel.invokeMockUseCase()
+        viewModel.invokeMockLoadingUseCase()
+        viewModel.invokeMockNetworkUseCase()
     }
     
     private func setupBindings() {
@@ -29,5 +30,6 @@ class ReactiveSwiftViewController: CommonViewController {
         
         primaryActionButton.reactive.title <~ viewModel.buttonTitleProducer
         primaryActionButton.reactive.isLoading <~ viewModel.isLoadingProducer
+        headerLabel.reactive.text <~ viewModel.productTitleProducer
     }
 }
