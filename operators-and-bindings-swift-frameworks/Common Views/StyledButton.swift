@@ -82,7 +82,7 @@ class StyledButton: UIButton {
         positionActivityIndicatorInButton()
     }
 
-    func isLoadingIndicatorEnabled(_ shouldShow: Bool) {
+    private func isLoadingIndicatorEnabled(_ shouldShow: Bool) {
         if shouldShow {
             activityIndicator.startAnimating()
             isEnabled = false

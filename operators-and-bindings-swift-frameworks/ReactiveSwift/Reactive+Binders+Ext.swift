@@ -12,7 +12,7 @@ import ReactiveCocoa
 extension Reactive where Base == StyledButton {
     var isLoading: BindingTarget<Bool> {
         return makeBindingTarget { button, isLoading in
-            button.isLoadingIndicatorEnabled(isLoading)
+            button.isLoading = isLoading
         }
     }
 }
