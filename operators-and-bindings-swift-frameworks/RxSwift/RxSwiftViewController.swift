@@ -13,23 +13,32 @@ import RxCocoa
 class RxSwiftViewController: CommonViewController {
     
     let disposeBag = DisposeBag()
-    let subject = PublishRelay<String>()
+    let buttonTitleRelay = PublishRelay<String>()
+    let isLoadingRelay = BehaviorRelay<Bool>(value: true)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBindings()
-        subject.accept("RxSwift")
+        buttonTitleRelay.accept("RxSwift")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: { [weak self] in
+            self?.isLoadingRelay.accept(false)
+        })
     }
     
     private func setupBindings() {
-        subject
+        buttonTitleRelay
             .printToConsole()
             .subscribe(onNext: {
                 print($0 + " - from subscribe")
             }).disposed(by: disposeBag)
         
-        subject
+        buttonTitleRelay
             .bind(to: styledButton.rx.title(for: .normal))
+            .disposed(by: disposeBag)
+        
+        isLoadingRelay
+            .bind(to: styledButton.rx.isLoading)
             .disposed(by: disposeBag)
     }
 }

@@ -11,24 +11,33 @@ import Combine
 class CombineViewController: CommonViewController {
 
     var cancellable = Set<AnyCancellable>()
-    let publisher = PassthroughSubject<String, Never>()
+    let buttonTitleSubject = PassthroughSubject<String, Never>()
+    let isLoadingSubject = CurrentValueSubject<Bool, Never>(true)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addView(styledButton)
         setupBindings()
-        publisher.send("Combine")
+        buttonTitleSubject.send("Combine")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: { [weak self] in
+            self?.isLoadingSubject.send(false)
+        })
+
     }
     
     private func setupBindings() {
-        publisher
+        buttonTitleSubject
             .printToConsole()
             .sink(receiveValue: {
                 print("\($0) - from sink")
             }).store(in: &cancellable)
         
-        publisher
+        buttonTitleSubject
             .assign(to: \.normalTitle, on: styledButton)
+            .store(in: &cancellable)
+        
+        isLoadingSubject
+            .assign(to: \.isLoading, on: styledButton)
             .store(in: &cancellable)
     }
 }

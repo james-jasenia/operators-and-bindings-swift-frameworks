@@ -27,6 +27,6 @@ class ReactiveSwiftViewController: CommonViewController {
                 print($0 + " - from observeValues")
             }
         
-        styledButton.reactive.title <~ publisher        
+        styledButton.reactive.title <~ publisher
     }
 }

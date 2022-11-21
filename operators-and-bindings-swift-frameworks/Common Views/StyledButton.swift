@@ -10,7 +10,7 @@ import UIKit
 class StyledButton: UIButton {
 
     open var enabledBackgroundColour: UIColor { .blue }
-    open var disabledBackgroundColour: UIColor { .red }
+    open var disabledBackgroundColour: UIColor { .lightGray }
 
     open var enabledFontColour: UIColor { .white }
     open var disabledFontColour: UIColor { .white }
@@ -37,6 +37,12 @@ class StyledButton: UIButton {
         
         set {
             setTitle(newValue, for: .normal)
+        }
+    }
+    
+    var isLoading: Bool = false {
+        didSet {
+            isLoadingIndicatorEnabled(isLoading)
         }
     }
 
