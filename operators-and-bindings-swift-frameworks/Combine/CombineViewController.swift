@@ -15,8 +15,8 @@ class CombineViewController: CommonViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addView(styledButton)
         setupBindings()
+        viewModel.invokeMockUseCase()
     }
     
     private func setupBindings() {

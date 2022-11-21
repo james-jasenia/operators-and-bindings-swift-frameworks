@@ -20,7 +20,7 @@ class CombineViewModel {
         mutableIsLoadingSubject.eraseToAnyPublisher()
     }
     
-    init() {
+    func invokeMockUseCase() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: { [weak self] in
             self?.mutableIsLoadingSubject.send(false)
         })
