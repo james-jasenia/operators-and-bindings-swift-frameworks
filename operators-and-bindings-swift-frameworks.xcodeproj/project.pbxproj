@@ -22,6 +22,7 @@
 		C4A48E71292BA9B4006CA57F /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A48E70292BA9B4006CA57F /* K.swift */; };
 		C4A48E74292BADDF006CA57F /* ProductResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A48E73292BADDF006CA57F /* ProductResponse.swift */; };
 		C4A48E77292BADFC006CA57F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A48E76292BADFC006CA57F /* Product.swift */; };
+		C4A48E79292BB0EC006CA57F /* ObservableType+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A48E78292BB0EC006CA57F /* ObservableType+Ext.swift */; };
 		C4C9D8A6292A100B0019C3C9 /* Combine+Operators+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C9D8A5292A100B0019C3C9 /* Combine+Operators+Ext.swift */; };
 		C4C9D8A8292A10420019C3C9 /* Rx+Operators+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C9D8A7292A10420019C3C9 /* Rx+Operators+Ext.swift */; };
 		C4C9D8AA292A10610019C3C9 /* Reactive+Operators+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C9D8A9292A10610019C3C9 /* Reactive+Operators+Ext.swift */; };
@@ -53,6 +54,7 @@
 		C4A48E70292BA9B4006CA57F /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		C4A48E73292BADDF006CA57F /* ProductResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductResponse.swift; sourceTree = "<group>"; };
 		C4A48E76292BADFC006CA57F /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		C4A48E78292BB0EC006CA57F /* ObservableType+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Ext.swift"; sourceTree = "<group>"; };
 		C4C9D8A5292A100B0019C3C9 /* Combine+Operators+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combine+Operators+Ext.swift"; sourceTree = "<group>"; };
 		C4C9D8A7292A10420019C3C9 /* Rx+Operators+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Operators+Ext.swift"; sourceTree = "<group>"; };
 		C4C9D8A9292A10610019C3C9 /* Reactive+Operators+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Operators+Ext.swift"; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				C4A48E6C292B794D006CA57F /* RxSwiftViewModel.swift */,
 				C4C9D8A7292A10420019C3C9 /* Rx+Operators+Ext.swift */,
 				C4C9D8C0292A48B10019C3C9 /* Rx+Binders+Ext.swift */,
+				C4A48E78292BB0EC006CA57F /* ObservableType+Ext.swift */,
 			);
 			path = RxSwift;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				C4A48E71292BA9B4006CA57F /* K.swift in Sources */,
 				C4A48E69292B74CF006CA57F /* Reactive+Binders+Ext.swift in Sources */,
 				C41718162929F41F0069438E /* RxSwiftViewController.swift in Sources */,
+				C4A48E79292BB0EC006CA57F /* ObservableType+Ext.swift in Sources */,
 				C41717F12929EE8A0069438E /* AppDelegate.swift in Sources */,
 				C4C9D8A6292A100B0019C3C9 /* Combine+Operators+Ext.swift in Sources */,
 				C4C9D8AF292A12B40019C3C9 /* CommonViewController.swift in Sources */,

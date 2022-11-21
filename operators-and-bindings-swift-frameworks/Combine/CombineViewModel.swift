@@ -16,9 +16,9 @@ class CombineViewModel {
         mutableButtonTitleSubject.eraseToAnyPublisher()
     }
     
-    private let mutableProducts = CurrentValueSubject<[Product], Never>([])
-    var productPublisher: AnyPublisher<String, Never> {
-        mutableProducts
+    private let mutableProductsSubject = CurrentValueSubject<[Product], Never>([])
+    var productTitlePublisher: AnyPublisher<String, Never> {
+        mutableProductsSubject
             .compactMap { $0.first }
             .map { $0.title }
             .eraseToAnyPublisher()
@@ -33,6 +33,7 @@ class CombineViewModel {
 
 //MARK: -- Mock Use Case Behaviour
 extension CombineViewModel {
+    
     func invokeMockLoadingUseCase() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: { [weak self] in
             self?.mutableIsLoadingSubject.send(false)
@@ -47,11 +48,11 @@ extension CombineViewModel {
             .map(\.data)
             .decode(type: [ProductResponse].self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
-            .sink { completion in
-                print(completion)
+            .sink { _ in
+                return
             } receiveValue: { [weak self] products in
                 let models = products.map { Product(response: $0) }
-                self?.mutableProducts.send(models)
+                self?.mutableProductsSubject.send(models)
             }.store(in: &cancellables)
     }
 }

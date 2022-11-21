@@ -35,7 +35,7 @@ class CombineViewController: CommonViewController {
             .assign(to: \.isLoading, on: primaryActionButton)
             .store(in: &cancellables)
         
-        viewModel.productPublisher
+        viewModel.productTitlePublisher
             .map { $0 }
             .assign(to: \.text, on: headerLabel)
             .store(in: &cancellables)

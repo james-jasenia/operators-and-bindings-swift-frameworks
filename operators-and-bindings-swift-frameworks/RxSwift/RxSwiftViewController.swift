@@ -18,22 +18,27 @@ class RxSwiftViewController: CommonViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBindings()
-        viewModel.invokeMockUseCase()
+        viewModel.invokeMockLoadingUseCase()
+        viewModel.invokeMockNetworkUseCase()
     }
     
     private func setupBindings() {
-        viewModel.buttonTitleRelay
+        viewModel.buttonTitleObservable
             .printToConsole()
             .subscribe(onNext: {
                 print($0 + " - from subscribe")
             }).disposed(by: disposeBag)
         
-        viewModel.buttonTitleRelay
+        viewModel.buttonTitleObservable
             .bind(to: primaryActionButton.rx.title(for: .normal))
             .disposed(by: disposeBag)
         
-        viewModel.isLoadingRelay
+        viewModel.isLoadingObservable
             .bind(to: primaryActionButton.rx.isLoading)
+            .disposed(by: disposeBag)
+        
+        viewModel.productTitleObservable
+            .bind(to: headerLabel.rx.text)
             .disposed(by: disposeBag)
     }
 }

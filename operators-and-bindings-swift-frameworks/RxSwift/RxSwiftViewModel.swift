@@ -10,19 +10,47 @@ import RxSwift
 import RxCocoa
 
 class RxSwiftViewModel {
+    let disposeBag = DisposeBag()
+    
     private let mutableButtonTitleRelay = BehaviorRelay<String>(value: "RxSwift")
-    var buttonTitleRelay: Observable<String> {
+    var buttonTitleObservable: Observable<String> {
         mutableButtonTitleRelay.asObservable()
     }
     
     private let mutableIsLoadingRelay = BehaviorRelay<Bool>(value: true)
-    var isLoadingRelay: Observable<Bool> {
+    var isLoadingObservable: Observable<Bool> {
         mutableIsLoadingRelay.asObservable()
     }
     
-    func invokeMockUseCase() {
+    private let mutableProductsRelay = BehaviorRelay<[Product]>(value: [])
+    var productTitleObservable: Observable<String> {
+        mutableProductsRelay
+            .compactMap { $0.first }
+            .map { $0.title }
+            .asObservable()
+    }
+}
+
+//MARK: -- Mock Use Case Behaviour
+extension RxSwiftViewModel {
+
+    func invokeMockLoadingUseCase() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: { [weak self] in
             self?.mutableIsLoadingRelay.accept(false)
         })
+    }
+    
+    func invokeMockNetworkUseCase() {
+        guard let url = URL(string: K.rawProductsURL) else { return }
+        
+        let request = URLRequest(url: url)
+        
+        URLSession.shared
+            .rx
+            .data(request: request)
+            .decode(type: [ProductResponse].self, decoder: JSONDecoder())
+            .mapMany { Product(response: $0) }
+            .bind(to: mutableProductsRelay)
+            .disposed(by: disposeBag)
     }
 }
