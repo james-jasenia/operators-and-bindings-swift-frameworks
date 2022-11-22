@@ -38,8 +38,7 @@ class RxSwiftViewController: CommonViewController {
             .disposed(by: disposeBag)
         
         viewModel.productTitleObservable
-            .bind(to: headerLabel.rx.text)
+            .bind(to: firstProductLabel.rx.text)
             .disposed(by: disposeBag)
     }
 }
-

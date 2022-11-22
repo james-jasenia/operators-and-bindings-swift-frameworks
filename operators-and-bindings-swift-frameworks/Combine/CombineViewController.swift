@@ -17,7 +17,7 @@ class CombineViewController: CommonViewController {
         super.viewDidLoad()
         setupBindings()
         viewModel.invokeMockLoadingUseCase()
-        viewModel.invokeMockNetworkUseCase()
+        viewModel.invokeNetworkRequestUsingDataTaskPublisher()
     }
     
     private func setupBindings() {
@@ -31,13 +31,18 @@ class CombineViewController: CommonViewController {
             .assign(to: \.normalTitle, on: primaryActionButton)
             .store(in: &cancellables)
         
-        viewModel.isLoadingPublisher
+        viewModel.isLoadingMockedPublisher
             .assign(to: \.isLoading, on: primaryActionButton)
             .store(in: &cancellables)
         
-        viewModel.productTitlePublisher
+        viewModel.productTitleDataTaskPublisher
             .map { $0 }
-            .assign(to: \.text, on: headerLabel)
+            .assign(to: \.text, on: firstProductLabel)
+            .store(in: &cancellables)
+        
+        viewModel.loadUseCaseTitlePublisher
+            .map { $0 }
+            .assign(to: \.text, on: secondProductLabel)
             .store(in: &cancellables)
     }
 }

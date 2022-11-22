@@ -30,6 +30,6 @@ class ReactiveSwiftViewController: CommonViewController {
         
         primaryActionButton.reactive.title <~ viewModel.buttonTitleProducer
         primaryActionButton.reactive.isLoading <~ viewModel.isLoadingProducer
-        headerLabel.reactive.text <~ viewModel.productTitleProducer
+        firstProductLabel.reactive.text <~ viewModel.productTitleProducer
     }
 }

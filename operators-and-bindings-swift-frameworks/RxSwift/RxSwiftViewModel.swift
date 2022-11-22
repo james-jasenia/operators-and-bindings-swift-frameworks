@@ -41,7 +41,7 @@ extension RxSwiftViewModel {
     }
     
     func invokeMockNetworkUseCase() {
-        guard let url = URL(string: K.rawProductsURL) else { return }
+        guard let url = URL(string: K.rawProductsPrimaryUrl) else { return }
         
         let request = URLRequest(url: url)
         

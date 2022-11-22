@@ -16,9 +16,17 @@ class CommonViewController: UIViewController {
         return stackView
     }()
     
-    lazy var headerLabel: UILabel = {
+    lazy var firstProductLabel: UILabel = {
         let label = UILabel()
         label.text = ""
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.textAlignment = .center
+        return label
+    }()
+    
+    lazy var secondProductLabel: UILabel = {
+        let label = UILabel()
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .center
@@ -43,7 +51,8 @@ class CommonViewController: UIViewController {
 
         view.addSubview(stackView)
         
-        stackView.addArrangedSubview(headerLabel)
+        stackView.addArrangedSubview(firstProductLabel)
+        stackView.addArrangedSubview(secondProductLabel)
         stackView.addArrangedSubview(primaryActionButton)
         
         NSLayoutConstraint.activate([

@@ -8,5 +8,7 @@
 import Foundation
 
 struct K {
-    static let rawProductsURL = "https://fakestoreapi.com/products"
+    static let rawProductsBrokenPrimaryUrl = "https://fakstorapi.co/prouts"
+    static let rawProductsPrimaryUrl = "https://fakestoreapi.com/products"
+    static let rawProductsFallbackUrl = "https://fakestoreapi.com/products?sort=desc"
 }
