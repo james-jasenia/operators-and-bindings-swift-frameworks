@@ -43,7 +43,7 @@ class CombineViewController: CommonViewController {
         viewModel.loadUseCaseTitlePublisher
             .map { $0 }
             .assign(to: \.text, on: secondProductLabel)
-            .store(in: &cancellables)
+            .store(in: &cancellables)            
     }
 }
 

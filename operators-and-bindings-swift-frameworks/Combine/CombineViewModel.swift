@@ -10,8 +10,8 @@ import Foundation
 
 class CombineViewModel {
     
-    var cancellables = Set<AnyCancellable>()
-    let loadUseCase = LoadUseCase()
+    private var cancellables = Set<AnyCancellable>()
+    private let loadUseCase = LoadUseCase()
     
     private let mutableButtonTitleSubject = CurrentValueSubject<String, Never>("Combine")
     var buttonTitlePublisher: AnyPublisher<String, Never> {

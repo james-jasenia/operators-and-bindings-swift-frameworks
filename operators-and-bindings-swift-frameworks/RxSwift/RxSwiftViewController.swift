@@ -40,5 +40,9 @@ class RxSwiftViewController: CommonViewController {
         viewModel.productTitleObservable
             .bind(to: firstProductLabel.rx.text)
             .disposed(by: disposeBag)
+        
+        viewModel.loadUseCaseTitleObservable
+            .bind(to: secondProductLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 }

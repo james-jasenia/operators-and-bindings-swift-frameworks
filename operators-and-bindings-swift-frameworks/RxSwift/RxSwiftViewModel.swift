@@ -10,7 +10,9 @@ import RxSwift
 import RxCocoa
 
 class RxSwiftViewModel {
-    let disposeBag = DisposeBag()
+    
+    private let loadUseCase = LoadUseCase()
+    private let disposeBag = DisposeBag()
     
     private let mutableButtonTitleRelay = BehaviorRelay<String>(value: "RxSwift")
     var buttonTitleObservable: Observable<String> {
@@ -29,16 +31,24 @@ class RxSwiftViewModel {
             .map { $0.title }
             .asObservable()
     }
+    
+    var loadUseCaseTitleObservable: Observable<String> {
+        return constructDeferredLoadObservableWithFallbackUrl()
+    }
 }
 
-//MARK: -- Mock Use Case Behaviour
+//MARK: -- Mocked isLoading
 extension RxSwiftViewModel {
-
+    
     func invokeMockLoadingUseCase() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: { [weak self] in
             self?.mutableIsLoadingRelay.accept(false)
         })
     }
+}
+
+//MARK: -- Data Request Observable
+extension RxSwiftViewModel {
     
     func invokeMockNetworkUseCase() {
         guard let url = URL(string: K.rawProductsPrimaryUrl) else { return }
@@ -52,5 +62,22 @@ extension RxSwiftViewModel {
             .mapMany { Product(response: $0) }
             .bind(to: mutableProductsRelay)
             .disposed(by: disposeBag)
+    }
+}
+    
+//MARK: -- Load Use Case Behaviour
+extension RxSwiftViewModel {
+    
+    func constructDeferredLoadObservableWithFallbackUrl() -> Observable<String> {
+        guard let primaryUrl = URL(string: K.rawProductsBrokenPrimaryUrl) else { fatalError("Developer error") }
+        guard let fallbackUrl = URL(string: K.rawProductsFallbackUrl) else { fatalError("Developer error") }
+        
+        let fallbackObservable = loadUseCase.loadObservable(for: fallbackUrl)
+        
+        return loadUseCase.loadObservable(for: primaryUrl)
+            .fallback { _ in  fallbackObservable }
+            .observe(on: MainScheduler.instance)
+            .compactMap { $0.first }
+            .map { $0.title }
     }
 }
