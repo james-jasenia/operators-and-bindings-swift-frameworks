@@ -9,7 +9,7 @@ A `subject` has a values property of type `AsyncThrowingStream<Element, Error>` 
 
 
 ## TODO:
-[ ] Create `mapMany` methods for `ReactiveSwift` and `Combine` observables. It probably wouldn't hurt to have a `Foundation` `mapMany` method as well.
+[] Create `mapMany` methods for `ReactiveSwift` and `Combine` observables. It probably wouldn't hurt to have a `Foundation` `mapMany` method as well.
 
 ```
 extension ObservableType where Element: Collection {
