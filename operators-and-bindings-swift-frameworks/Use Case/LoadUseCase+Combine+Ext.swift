@@ -11,8 +11,8 @@ import Combine
 extension LoadUseCase {
     func loadPublisher(for url: URL) -> AnyPublisher<[Product], Error> {
         Deferred {
-            Future { completion in
-                self.load(for: url, completion: completion)
+            Future { promise in
+                self.load(for: url, completion: promise)
             }
         }
         .eraseToAnyPublisher()

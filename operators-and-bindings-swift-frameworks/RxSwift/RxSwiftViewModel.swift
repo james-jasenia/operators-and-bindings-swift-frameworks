@@ -13,7 +13,7 @@ class RxSwiftViewModel {
     
     private let loadUseCase = LoadUseCase()
     private let disposeBag = DisposeBag()
-    
+        
     private let mutableButtonTitleRelay = BehaviorRelay<String>(value: "RxSwift")
     var buttonTitleObservable: Observable<String> {
         mutableButtonTitleRelay.asObservable()
