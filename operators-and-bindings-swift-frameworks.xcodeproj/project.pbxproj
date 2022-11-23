@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C4150389292CF62F00BC3025 /* LoadUseCase+RxSwift+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4150388292CF62F00BC3025 /* LoadUseCase+RxSwift+Ext.swift */; };
+		C415038B292CFC1500BC3025 /* LoadUseCase+ReactiveSwift+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C415038A292CFC1500BC3025 /* LoadUseCase+ReactiveSwift+Ext.swift */; };
 		C41717F12929EE8A0069438E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41717F02929EE8A0069438E /* AppDelegate.swift */; };
 		C41717F32929EE8A0069438E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41717F22929EE8A0069438E /* SceneDelegate.swift */; };
 		C41717F52929EE8A0069438E /* CombineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41717F42929EE8A0069438E /* CombineViewController.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		C4150388292CF62F00BC3025 /* LoadUseCase+RxSwift+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoadUseCase+RxSwift+Ext.swift"; sourceTree = "<group>"; };
+		C415038A292CFC1500BC3025 /* LoadUseCase+ReactiveSwift+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoadUseCase+ReactiveSwift+Ext.swift"; sourceTree = "<group>"; };
 		C41717ED2929EE8A0069438E /* operators-and-bindings-swift-frameworks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "operators-and-bindings-swift-frameworks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C41717F02929EE8A0069438E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C41717F22929EE8A0069438E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				C4E42F9E292CDC2200A727C5 /* LoadUseCase.swift */,
 				C4E42FA2292CE6AE00A727C5 /* LoadUseCase+Combine+Ext.swift */,
 				C4150388292CF62F00BC3025 /* LoadUseCase+RxSwift+Ext.swift */,
+				C415038A292CFC1500BC3025 /* LoadUseCase+ReactiveSwift+Ext.swift */,
 			);
 			path = "Use Case";
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				C4E42FA1292CDEE300A727C5 /* NetworkService.swift in Sources */,
 				C4A48E77292BADFC006CA57F /* Product.swift in Sources */,
 				C4E42FA3292CE6AE00A727C5 /* LoadUseCase+Combine+Ext.swift in Sources */,
+				C415038B292CFC1500BC3025 /* LoadUseCase+ReactiveSwift+Ext.swift in Sources */,
 				C4C9D8AA292A10610019C3C9 /* Reactive+Operators+Ext.swift in Sources */,
 				C4A48E6F292B7B22006CA57F /* ReactiveSwiftViewModel.swift in Sources */,
 				C4C9D8A8292A10420019C3C9 /* Rx+Operators+Ext.swift in Sources */,

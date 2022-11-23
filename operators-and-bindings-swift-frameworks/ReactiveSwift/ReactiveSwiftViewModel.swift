@@ -10,6 +10,7 @@ import ReactiveSwift
 
 class ReactiveSwiftViewModel {
     
+    let useCase = LoadUseCase()
     let disposables = CompositeDisposable()
     
     private let mutableProductsProperty = MutableProperty<[Product]>([])
@@ -28,6 +29,11 @@ class ReactiveSwiftViewModel {
     private let mutableIsLoadingProperty = MutableProperty<Bool>(true)
     var isLoadingProducer: SignalProducer<Bool, Never> {
         mutableIsLoadingProperty.producer
+    }
+    
+    var loadUseCaseTitleObservable: SignalProducer<String, Never> {
+        return constructDeferredLoadObservableWithFallbackUrl()
+            .flatMapError { _ in SignalProducer(value: "") }
     }
 }
 
@@ -62,5 +68,19 @@ extension ReactiveSwiftViewModel {
                     break
                 }
             }
+    }
+    
+    func constructDeferredLoadObservableWithFallbackUrl() -> SignalProducer<String, Error> {
+        let primaryUrl = URL(string: K.rawProductsBrokenPrimaryUrl)!
+        let fallbackUrl = URL(string: K.rawProductsFallbackUrl)!
+        
+        let fallback = useCase.loadSignal(for: fallbackUrl)
+        
+        return useCase.loadSignal(for: primaryUrl)
+            .fallback(to: { _ in fallback } )
+            .observe(on: UIScheduler())
+            .compactMap { $0.first }
+            .map { $0.title }
+            .producer
     }
 }
